@@ -15,8 +15,8 @@ public class WeatherViewer {
     public static void processCity() throws IOException, SQLException {
         // бесконечный цикл опроса ввода из консоли.
         while (true) {
-            System.out.println("--= Введите город (для выхода из программы наберите 'выход', для получения истории " +
-                    "'история <город>')" + " " + "=--");
+            System.out.println("--= Введите город на английском языке (для выхода из программы наберите 'выход', для получения истории " +
+                    "'история <название города на русском языке>')" + " " + "=--");
             Scanner sc = new Scanner(System.in);
             String city = sc.nextLine();
             if (city.equals("выход")) {

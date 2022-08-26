@@ -159,6 +159,7 @@ public class WeatherController {
 
             Response response = client.newCall(request).execute();
             String res = response.body().string();
+            System.out.println(res);
             WeatherResponse result = objectMapper.readValue(res, WeatherResponse.class);
             // поскольку на этом этапе понятно что запрос успешен - дадим данные о нем в БД
             DBController controller = new DBController();
