@@ -1,8 +1,11 @@
 package JavaCoreHomeWork8_1.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.*;
 
-public class City{             // текущий город
+@JsonIgnoreProperties(ignoreUnknown = true)  // игнорируем недекларированные
+
+public class City {             // текущий город
     Integer id;
     String name;
     Coordinates coordinates;
@@ -81,6 +84,6 @@ public class City{             // текущий город
 
     @Override
     public String toString() {
-        return "город " + name + "(" + country + ")";
+        return "город " + name;
     }
 }

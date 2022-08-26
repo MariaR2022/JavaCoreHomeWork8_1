@@ -2,7 +2,7 @@ package JavaCoreHomeWork8_1.model;
 
 import java.util.*;
 
-public class WeatherResponse {      // Полный ответ по прогнозу на 5 дней
+public class WeatherResponse {      // Ответ по прогнозу на 5 дней
     String cod;
     Integer message;
     Integer cnt;
@@ -65,8 +65,7 @@ public class WeatherResponse {      // Полный ответ по прогно
     @Override
     public String toString() {
         if (isEmpty()) return "";
-        String result = "Ответ сервера погоды:\n" +
-                "\tМесто: " + city + ".\n\tПрогноз погоды на 5 дней (детализация 3 часа):\n"+ list;
+        String result = "Ответ сервера погоды:\n" + city + "\n\t Прогноз погоды на 5 дней (детализация 3 часа):\n"+ list;
         return result.replace("[","").replace("]","");
     }
 }

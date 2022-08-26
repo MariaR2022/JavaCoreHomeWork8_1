@@ -12,14 +12,19 @@ public class WeatherViewer {
         System.out.println(data);
     }
 
-    public static void processCity() throws IOException {
+    public static void processCity() throws IOException, SQLException {
         // бесконечный цикл опроса ввода из консоли.
         while (true) {
-            System.out.println("--= Введите город (для выхода из программы наберите 'exit') =--");
+            System.out.println("--= Введите город (для выхода из программы наберите 'выход', для получения истории " +
+                    "'история <город>')" + " " + "=--");
             Scanner sc = new Scanner(System.in);
             String city = sc.nextLine();
-            if (city.equals("exit")) {
+            if (city.equals("выход")) {
                 break;
+            } else if (city.contains("история")) {
+                String[] buff = city.split(" ");
+                city = buff[1];
+                WeatherController.printCityHistory(city);
             } else {
                 WeatherResponse weather = WeatherController.getWeatherFromCityV2(city);
                 if (weather.isEmpty()) {
@@ -30,4 +35,5 @@ public class WeatherViewer {
             }
         }
     }
+
 }
